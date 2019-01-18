@@ -38,22 +38,12 @@ public class RootOfNumber {
             return lower;
 
         double mid = (lower + upper) / 2;
-        double result = multiply_N_times(mid, n);
+        double result = Math.pow(mid, n);
         if (result == x)
             return mid;
         if (result > x)
             return binarySearch(lower, mid, x, n);
 
         return binarySearch(mid, upper, x, n);
-    }
-
-    private static double multiply_N_times(double m, int n) {
-        double result = 1.d;
-        while (n > 0){
-            result *=m;
-            --n;
-        }
-
-        return result;
     }
 }
